@@ -15,9 +15,9 @@ gulp.task('clean', () => {
         .pipe(clean());
 });
 
-gulp.task('html', () => {
+gulp.task('copy', () => {
     gulp
-        .src(`${path.origin}/**/*.html`)
+        .src(`${path.origin}/**/*.+(html|js)`)
         .pipe(gulp.dest(path.deploy))
         .pipe(browserSync.stream());
 });
@@ -36,13 +36,26 @@ gulp.task('server', () => {
         }
     });
 
-    gulp.watch(`${path.origin}/**/*.html`, ['html']);
+    gulp.watch(`${path.origin}/**/*.+(html|js)`, ['copy']);
     gulp.watch(`${path.origin}/**/*.+(scss|sass)`).on('change', () => {
         gulp.start('sass');
     });
 });
 
+gulp.task('test-watch', () => {
+    browserSync.init({
+        server: {
+            baseDir: './',
+            index: 'SpecRunner.html',
+        }
+    });
+
+    gulp.watch(`${path.origin}/**/*.js`, ['copy']);
+    gulp.watch(`./**/*[Ss]pec.js`).on('change', reload);
+    gulp.watch(`jasmine/**/*.html`).on('change', reload);
+});
+
 gulp.task('default', ['clean'], () => gulp.start(
-    'html'
+    'copy'
     , 'sass'
 ));

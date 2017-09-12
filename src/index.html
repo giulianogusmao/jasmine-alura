@@ -11,37 +11,11 @@
 <body>
     <p>Curso Jasmine</p>
 </body>
+<script src="js/MaiorMenor.js"></script>
 <script type="text/javascript">
-    var MaiorMenor = function() {
-        let menor;
-        let maior;
-
-        let clazz = {
-            encontra(nums) {
-                menor = Number.MAX_VALUE;
-                maior = Number.MIN_VALUE;
-
-                nums.forEach(num => {
-                    if (num < menor) menor = num;
-                    else if (num > maior) maior = num;
-                });
-            },
-            getMenor() {
-                return menor;
-            },
-            getMaior() {
-                return maior;
-            }
-        }
-
-        return clazz;
-    };
-
-
     var algoritmo = new MaiorMenor();
     algoritmo.encontra([7, 6, 5, 4]);
     console.log(`Menor: ${algoritmo.getMenor()}`);
     console.log(`Maior: ${algoritmo.getMaior()}`);
-
 </script>
 </html>
