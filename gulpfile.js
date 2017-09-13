@@ -46,7 +46,7 @@ gulp.task('test-watch', () => {
     browserSync.init({
         server: {
             baseDir: './',
-            index: 'SpecRunner.html',
+            index: './src/index.html',
         }
     });
 

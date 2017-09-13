@@ -1,9 +1,10 @@
 class Consulta {
-    constructor (paciente, procedimentos, particular, retorno) {
+    constructor (paciente, procedimentos, particular, retorno, data) {
         this.paciente = paciente;
         this.procedimentos = procedimentos;
         this.particular = particular;
         this.retorno = retorno;
+        this.data = data;
     }
 
     preco () {
@@ -25,5 +26,13 @@ class Consulta {
         });
         
         return this.particular ? total * 2 : total;
+    }
+
+    getData () {
+        return this.data;
+    }
+
+    isRetorno () {
+        return this.retorno;
     }
 }
