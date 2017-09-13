@@ -9,6 +9,7 @@ class Paciente {
     imprime () {
         let msg = `Nome: ${this.nome} tem ${this.idade} anos.`;
         console.log(msg);
+        return msg;
     }
 
     batimentos () {

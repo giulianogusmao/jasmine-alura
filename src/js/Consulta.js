@@ -13,7 +13,7 @@ class Consulta {
 
         this.procedimentos.forEach(procedimento => {
             switch(procedimento) {
-                case 'raio-x': 
+                case 'raio-x':
                     total += 55;
                     break;
                 case 'gesso': 

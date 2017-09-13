@@ -6,9 +6,9 @@
   "scripts": {
     "gulp": "gulp",
     "start": "gulp server",
+    "start-test": "gulp test-watch",
     "jasmine": "jasmine",
-    "test": "jasmine",
-    "test-watch": "gulp test-watch"
+    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
