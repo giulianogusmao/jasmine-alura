@@ -42,6 +42,7 @@ describe('Números Romanos', () => {
             expect(romanos.convert('CXLVI')).toEqual(146);
             expect(romanos.convert('CLX')).toEqual(160);
             expect(romanos.convert('CLXXXV')).toEqual(185);
+        });
     });
 
     describe('inválidos', () => {
